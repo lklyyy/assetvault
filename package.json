@@ -1,0 +1,47 @@
+{
+  "name": "asset-library",
+  "version": "1.0.0",
+  "description": "AssetVault - AI Asset Management Desktop App",
+  "author": "AssetVault",
+  "private": true,
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "setup": "node scripts/init-db.mjs",
+    "deploy": "next build && vercel --prod",
+    "desktop": "concurrently \"npm run dev\" \"wait-on http://localhost:3000 && electron .\"",
+    "desktop:build": "next build && electron-builder --config electron-builder.json",
+    "desktop:start": "electron ."
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.12.0",
+    "@supabase/supabase-js": "^2.108.2",
+    "clsx": "^2.1.1",
+    "electron-store": "^11.0.2",
+    "lucide-react": "^1.18.0",
+    "next": "16.2.9",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "sonner": "^2.0.7",
+    "tailwind-merge": "^3.6.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "canvas": "^3.2.3",
+    "concurrently": "^10.0.3",
+    "electron": "^42.4.1",
+    "electron-builder": "^26.15.3",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.9",
+    "tailwindcss": "^4",
+    "to-ico": "^1.1.5",
+    "typescript": "^5",
+    "wait-on": "^9.0.10"
+  }
+}
