@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>AssetVault 导入设置</title></head>
+<body style="font-family:-apple-system,sans-serif;max-width:500px;margin:40px auto;padding:20px;">
+  <h2>📥 AssetVault 导入设置</h2>
+  <p>AssetVault API 地址：</p>
+  <input id="api" type="text" value="http://localhost:3000/api/import" style="width:100%;padding:10px;border-radius:8px;border:1px solid #ccc;" />
+  <br><br>
+  <button id="save" style="background:#667eea;color:white;border:none;padding:10px 20px;border-radius:20px;cursor:pointer;">保存</button>
+  <br><br>
+  <hr>
+  <h3>使用方法</h3>
+  <ol>
+    <li>确保 AssetVault 本地服务器已启动（localhost:3000）</li>
+    <li>打开 Qenda 等 AI 图片生成页面</li>
+    <li>右下角会显示 📥 按钮，点击导入</li>
+    <li>或按 <kbd>Ctrl+Shift+I</kbd> 快捷键</li>
+  </ol>
+  <script>
+    document.getElementById('api').value = localStorage.getItem('av_api') || 'http://localhost:3000/api/import';
+    document.getElementById('save').onclick = () => {
+      localStorage.setItem('av_api', document.getElementById('api').value);
+      alert('已保存');
+    };
+  </script>
+</body>
+</html>
