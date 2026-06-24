@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "AssetVault Qenda 导入",
+  "version": "1.0",
+  "description": "从 Qenda 等 AI 平台一键导入图片和提示词到 AssetVault",
+  "permissions": ["storage", "scripting"],
+  "host_permissions": ["*://*/*"],
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["content.js"],
+      "css": ["style.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "options_ui": {
+    "page": "options.html"
+  },
+  "icons": {
+    "128": "icon-128.png"
+  }
+}
